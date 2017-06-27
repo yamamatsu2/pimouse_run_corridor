@@ -6,9 +6,9 @@ from pimouse_ros.msg import LightSensorValues
 
 class WallStop():
     def __init__(self):
-	self.cmd_vel = rospy.Publisher('/cmd_vel',twist,queue_size=1)
+	self.cmd_vel = rospy.Publisher('/cmd_vel',Twist,queue_size=1)
 
-	self.sensor_values = LightsensorValues()
+	self.sensor_values = LightSensorValues()
 	rospy.Subscriber('/lightsensor', LightSensorValues, self.callback)
 
     def callback(self,messages):
